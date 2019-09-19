@@ -1,5 +1,5 @@
 <template>
-    <paginate
+    <vuejs-paginate
         v-model="page"
         :page-count="pageCount"
         :prev-text="prevText"
@@ -13,11 +13,11 @@
         :next-link-class="'page-link'"
         :click-handler="clickCallback"
     >
-    </paginate>
+    </vuejs-paginate>
 </template>
 
 <script>
-import Paginate from 'vuejs-paginate'
+import VuejsPaginate from 'vuejs-paginate'
 export default {
     props: {
         data: {
@@ -64,7 +64,7 @@ export default {
         }
     },
     components: {
-        Paginate,
+        VuejsPaginate,
     }
 }
 </script>

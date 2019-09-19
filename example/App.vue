@@ -19,11 +19,11 @@ export default {
     }
   },
   mounted: function () {
-    for(let i = 0; i < 101; i++) {
-      this.data.push({
-        id: i+1,
-      })
-    }
+    // for(let i = 0; i < 101; i++) {
+    //   this.data.push({
+    //     id: i+1,
+    //   })
+    // }
   },
   methods: {
     ///
