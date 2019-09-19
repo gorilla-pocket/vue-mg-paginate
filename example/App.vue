@@ -1,27 +1,3 @@
-# vue-mg-paginate
-vue-mg-paginate
-
-![npm](https://img.shields.io/npm/v/vue-mg-paginate)
-![npm](https://img.shields.io/npm/dm/vue-mg-paginate)
-
-## Installation
-
-```
-npm i vue-mg-paginate
-```
-
-## Usage
-
-app.js
-
-```javascript
-import Paginate from 'vue-mg-paginate'
-Vue.component('Paginate', Paginate)
-```
-
-Example:
-
-```html
 <template>
   <section class="container">
     <paginate :data="data" :count-per-page="countPerPage" @change="paginate_data=$event"></paginate>
@@ -57,8 +33,3 @@ export default {
   },  
 }
 </script>
-```
-
-## License
-
-MIT
