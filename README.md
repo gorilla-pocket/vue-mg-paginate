@@ -15,8 +15,8 @@ npm i vue-mg-paginate
 app.js
 
 ```javascript
-import Paginate from 'vue-mg-paginate'
-Vue.component('Paginate', Paginate)
+import MgPaginate from 'vue-mg-paginate'
+Vue.component('MgPaginate', MgPaginate)
 ```
 
 Example:
@@ -24,7 +24,7 @@ Example:
 ```html
 <template>
   <section class="container">
-    <paginate :data="data" :count-per-page="countPerPage" @change="paginate_data=$event"></paginate>
+    <mg-paginate :data="data" :count-per-page="countPerPage" @change="paginate_data=$event"></mg-paginate>
   </section>
 </template>
 
@@ -32,8 +32,6 @@ Example:
 </style>
 
 <script>
-import Paginate from '../src/vue-mg-paginate'
-import 'bootstrap/dist/css/bootstrap.min.css'
 export default {
   data() {
     return {
@@ -53,7 +51,7 @@ export default {
     ///
   },
   components: {
-    Paginate,
+    //
   },  
 }
 </script>
