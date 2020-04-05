@@ -23,6 +23,9 @@ export default {
         data: {
             default: [],
         },
+        currentPage: {
+            default: 1,
+        },
         countPerPage: {
             default: 20,
         },
@@ -38,29 +41,33 @@ export default {
             page: 1,
         }
     },
-    mounted: function () {
+    mounted() {
         // console.log(this.value)
     },
     watch: {
-        data: function () {
+        data() {
             this.clickCallback(1)
-        }
+        },
+        currentPage() {
+            this.page = this.currentPage
+        },
     },
     computed: {
-        pageCount: function () {
+        pageCount() {
             const count = parseInt(this.data.length / this.countPerPage)
             if (this.data.length > count * this.countPerPage) return count + 1
             return count
         },
     },
     methods: {
-        clickCallback: function(pageNum) {
+        clickCallback(pageNum) {
             this.page = pageNum
             let list = this.data.concat()
             if (this.page) {
                 list = list.splice((this.page - 1) * this.countPerPage, this.countPerPage)
             }
             this.$emit('change', list)
+            this.$emit('update:currentPage', pageNum)
         }
     },
     components: {
