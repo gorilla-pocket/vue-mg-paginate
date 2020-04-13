@@ -46,14 +46,14 @@ export default {
     },
     watch: {
         data() {
-            if (this.pageCount < this.page) {
-                this.clickCallback(1)
-            } else {
-                this.clickCallback(this.page)
-            }
+            this.clickCallback(this.page)
         },
-        currentPage() {
-            this.page = parseInt(this.currentPage)
+        currentPage(val) {
+            if (this.pageCount < val) {
+                this.page = parseInt(this.pageCount)
+            } else {
+                this.page = parseInt(this.currentPage)
+            }
         },
     },
     computed: {
@@ -71,7 +71,7 @@ export default {
                 list = list.splice((this.page - 1) * this.countPerPage, this.countPerPage)
             }
             this.$emit('change', list)
-            this.$emit('update:currentPage', pageNum)
+            this.$emit('update:currentPage', this.page)
         }
     },
     components: {
