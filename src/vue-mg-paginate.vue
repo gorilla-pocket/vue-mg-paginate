@@ -46,10 +46,10 @@ export default {
     },
     watch: {
         data() {
-            this.clickCallback(1)
+            this.clickCallback(this.page)
         },
         currentPage() {
-            this.page = this.currentPage
+            this.page = parseInt(this.currentPage)
         },
     },
     computed: {
