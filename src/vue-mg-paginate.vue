@@ -52,7 +52,7 @@ export default {
             if (this.pageCount < val) {
                 this.page = parseInt(this.pageCount)
             } else {
-                this.page = parseInt(this.currentPage)
+                this.page = parseInt(val)
             }
         },
     },
