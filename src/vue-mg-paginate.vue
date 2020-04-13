@@ -46,7 +46,11 @@ export default {
     },
     watch: {
         data() {
-            this.clickCallback(this.page)
+            if (this.pageCount < this.page) {
+                this.clickCallback(this.pageCount)
+            } else {
+                this.clickCallback(this.page)
+            }
         },
         currentPage(val) {
             if (this.pageCount < val) {
