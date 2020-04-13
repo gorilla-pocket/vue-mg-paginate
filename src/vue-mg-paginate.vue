@@ -50,9 +50,9 @@ export default {
         },
         currentPage(val) {
             if (this.pageCount < val) {
-                this.page = parseInt(this.pageCount)
+                this.clickCallback(this.pageCount)
             } else {
-                this.page = parseInt(val)
+                this.clickCallback(val)
             }
         },
     },
