@@ -46,7 +46,11 @@ export default {
     },
     watch: {
         data() {
-            this.clickCallback(this.page)
+            if (this.pageCount < this.page) {
+                this.clickCallback(1)
+            } else {
+                this.clickCallback(this.page)
+            }
         },
         currentPage() {
             this.page = parseInt(this.currentPage)
